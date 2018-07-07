@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "Decentralized portfolio based on ERC721 & EIP998",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "start": "npm run dev",
+    "build": "node scripts/build.js",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "e2e": "node test/e2e/runner.js",
+    "test/truffle": "truffle test test/truffle/*",
+    "test/dapp": "npm run unit && npm run e2e",
+    "test": "npm run test/truffle && npm run test/dapp",
+    "testt": "npm run test/truffle",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+  },
+  "keywords": [
+    "Ethereum",
+    "Portfolio"
+  ],
+  "author": "@trevorjtclarke",
+  "license": "MIT"
+}

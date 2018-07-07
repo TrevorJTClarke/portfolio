@@ -1,0 +1,4 @@
+*.log
+.editorconfig
+dist
+node_modules
