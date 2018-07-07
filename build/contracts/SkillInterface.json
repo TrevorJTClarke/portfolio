@@ -1,0 +1,351 @@
+{
+  "contractName": "SkillInterface",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "SkillAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_total",
+          "type": "uint256"
+        }
+      ],
+      "name": "SkillEndorsed",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820023dafe76e17f82f041c8fe961bc19762b433bdf2fd0fc87a35918d584c92a340029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820023dafe76e17f82f041c8fe961bc19762b433bdf2fd0fc87a35918d584c92a340029",
+  "sourceMap": "66:233:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:233:2;;;;;;;",
+  "deployedSourceMap": "66:233:2:-;;;;;",
+  "source": "pragma solidity ^0.4.23;\n\n// Standard FNs Required for new Skills\ninterface SkillInterface {\n  //////////////////////////////////////////\n  /// Events\n  //////////////////////////////////////////\n  event SkillAdded(bytes32 indexed _name);\n  event SkillEndorsed(bytes32 indexed _name, uint _total);\n}\n",
+  "sourcePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
+    "exportedSymbols": {
+      "SkillInterface": [
+        71
+      ]
+    },
+    "id": 72,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 60,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 71,
+        "linearizedBaseContracts": [
+          71
+        ],
+        "name": "SkillInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": "///////////////////////////////////////\n Events\n///////////////////////////////////////",
+            "id": 64,
+            "name": "SkillAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64,
+                  "src": "215:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 61,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:23:2"
+            },
+            "src": "198:40:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 70,
+            "name": "SkillEndorsed",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "261:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 68,
+                  "indexed": false,
+                  "name": "_total",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "284:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "260:36:2"
+            },
+            "src": "241:56:2"
+          }
+        ],
+        "scope": 72,
+        "src": "66:233:2"
+      }
+    ],
+    "src": "0:300:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
+    "exportedSymbols": {
+      "SkillInterface": [
+        71
+      ]
+    },
+    "id": 72,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 60,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 71,
+        "linearizedBaseContracts": [
+          71
+        ],
+        "name": "SkillInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": "///////////////////////////////////////\n Events\n///////////////////////////////////////",
+            "id": 64,
+            "name": "SkillAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 62,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64,
+                  "src": "215:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 61,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:23:2"
+            },
+            "src": "198:40:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 70,
+            "name": "SkillEndorsed",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "261:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 68,
+                  "indexed": false,
+                  "name": "_total",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 70,
+                  "src": "284:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "260:36:2"
+            },
+            "src": "241:56:2"
+          }
+        ],
+        "scope": 72,
+        "src": "66:233:2"
+      }
+    ],
+    "src": "0:300:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-07-07T23:34:35.809Z"
+}

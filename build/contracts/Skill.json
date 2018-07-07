@@ -1,0 +1,849 @@
+{
+  "contractName": "Skill",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getApproved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "exists",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenByIndex",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "createTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "endorsedTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setApprovalForAll",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "safeTransferFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genome",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_operator",
+          "type": "address"
+        }
+      ],
+      "name": "isApprovedForAll",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "SkillAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "_total",
+          "type": "uint256"
+        }
+      ],
+      "name": "SkillEndorsed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_approved",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_approved",
+          "type": "bool"
+        }
+      ],
+      "name": "ApprovalForAll",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.23;\n\n// TODO: Import ERC721 & Interface\n// TODO: Create Library for genome fns\nimport \"zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol\";\nimport \"./SkillInterface.sol\";\n\ncontract Skill is ERC721Token, SkillInterface {\n  /* address public owner; */\n  uint256 public genome;\n  // The timestamp from the block when this skill came into existence.\n  uint64 public createTime;\n  // The timestamp from the block when this skill was first endorsed.\n  uint64 public endorsedTime;\n\n}\n",
+  "sourcePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
+  "ast": {
+    "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
+    "exportedSymbols": {
+      "Skill": [
+        58
+      ]
+    },
+    "id": 59,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 45,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "file": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "id": 46,
+        "nodeType": "ImportDirective",
+        "scope": 59,
+        "sourceUnit": 1317,
+        "src": "100:66:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
+        "file": "./SkillInterface.sol",
+        "id": 47,
+        "nodeType": "ImportDirective",
+        "scope": 59,
+        "sourceUnit": 72,
+        "src": "167:30:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 48,
+              "name": "ERC721Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1316,
+              "src": "217:11:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC721Token_$1316",
+                "typeString": "contract ERC721Token"
+              }
+            },
+            "id": 49,
+            "nodeType": "InheritanceSpecifier",
+            "src": "217:11:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 50,
+              "name": "SkillInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 71,
+              "src": "230:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SkillInterface_$71",
+                "typeString": "contract SkillInterface"
+              }
+            },
+            "id": 51,
+            "nodeType": "InheritanceSpecifier",
+            "src": "230:14:1"
+          }
+        ],
+        "contractDependencies": [
+          71,
+          211,
+          231,
+          238,
+          345,
+          929,
+          1316
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 58,
+        "linearizedBaseContracts": [
+          58,
+          71,
+          1316,
+          929,
+          238,
+          231,
+          211,
+          345
+        ],
+        "name": "Skill",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 53,
+            "name": "genome",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "279:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 52,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "279:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 55,
+            "name": "createTime",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "375:24:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint64",
+              "typeString": "uint64"
+            },
+            "typeName": {
+              "id": 54,
+              "name": "uint64",
+              "nodeType": "ElementaryTypeName",
+              "src": "375:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint64",
+                "typeString": "uint64"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 57,
+            "name": "endorsedTime",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "473:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint64",
+              "typeString": "uint64"
+            },
+            "typeName": {
+              "id": 56,
+              "name": "uint64",
+              "nodeType": "ElementaryTypeName",
+              "src": "473:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint64",
+                "typeString": "uint64"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 59,
+        "src": "199:304:1"
+      }
+    ],
+    "src": "0:504:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
+    "exportedSymbols": {
+      "Skill": [
+        58
+      ]
+    },
+    "id": 59,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 45,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".23"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "file": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
+        "id": 46,
+        "nodeType": "ImportDirective",
+        "scope": 59,
+        "sourceUnit": 1317,
+        "src": "100:66:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
+        "file": "./SkillInterface.sol",
+        "id": 47,
+        "nodeType": "ImportDirective",
+        "scope": 59,
+        "sourceUnit": 72,
+        "src": "167:30:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 48,
+              "name": "ERC721Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1316,
+              "src": "217:11:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC721Token_$1316",
+                "typeString": "contract ERC721Token"
+              }
+            },
+            "id": 49,
+            "nodeType": "InheritanceSpecifier",
+            "src": "217:11:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 50,
+              "name": "SkillInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 71,
+              "src": "230:14:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SkillInterface_$71",
+                "typeString": "contract SkillInterface"
+              }
+            },
+            "id": 51,
+            "nodeType": "InheritanceSpecifier",
+            "src": "230:14:1"
+          }
+        ],
+        "contractDependencies": [
+          71,
+          211,
+          231,
+          238,
+          345,
+          929,
+          1316
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 58,
+        "linearizedBaseContracts": [
+          58,
+          71,
+          1316,
+          929,
+          238,
+          231,
+          211,
+          345
+        ],
+        "name": "Skill",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 53,
+            "name": "genome",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "279:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 52,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "279:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 55,
+            "name": "createTime",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "375:24:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint64",
+              "typeString": "uint64"
+            },
+            "typeName": {
+              "id": 54,
+              "name": "uint64",
+              "nodeType": "ElementaryTypeName",
+              "src": "375:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint64",
+                "typeString": "uint64"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 57,
+            "name": "endorsedTime",
+            "nodeType": "VariableDeclaration",
+            "scope": 58,
+            "src": "473:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint64",
+              "typeString": "uint64"
+            },
+            "typeName": {
+              "id": 56,
+              "name": "uint64",
+              "nodeType": "ElementaryTypeName",
+              "src": "473:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint64",
+                "typeString": "uint64"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 59,
+        "src": "199:304:1"
+      }
+    ],
+    "src": "0:504:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-07-07T23:34:35.809Z"
+}
