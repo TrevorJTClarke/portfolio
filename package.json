@@ -85,7 +85,6 @@
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
-    "phantomjs-prebuilt": "^2.1.14",
     "prettier": "^1.13.7",
     "rimraf": "^2.6.0",
     "sass-loader": "^6.0.6",
@@ -106,8 +105,8 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": ">= 10.6.0",
-    "npm": ">= 6.1.0"
+    "node": ">= 8.11.3",
+    "npm": ">= 5.6.0"
   },
   "browserslist": [
     "> 1%",
