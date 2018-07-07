@@ -1,5 +1,5 @@
-var Portfolio = artifacts.require("./Portfolio.sol");
+var Portfolio = artifacts.require('./Portfolio.sol')
 
 module.exports = function(deployer) {
-  deployer.deploy(Portfolio);
-};
+  deployer.deploy(Portfolio)
+}
