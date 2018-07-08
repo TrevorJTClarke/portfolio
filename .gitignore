@@ -1,5 +1,6 @@
 .git
 *.log
 .editorconfig
+build
 dist
 node_modules

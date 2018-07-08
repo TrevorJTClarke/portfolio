@@ -8,9 +8,14 @@
           "indexed": true,
           "name": "_name",
           "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "_skill",
+          "type": "address"
         }
       ],
-      "name": "SkillAdded",
+      "name": "SkillMinted",
       "type": "event"
     },
     {
@@ -22,6 +27,11 @@
           "type": "bytes32"
         },
         {
+          "indexed": true,
+          "name": "_skill",
+          "type": "address"
+        },
+        {
           "indexed": false,
           "name": "_total",
           "type": "uint256"
@@ -29,26 +39,58 @@
       ],
       "name": "SkillEndorsed",
       "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        }
+      ],
+      "name": "endorse",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getSkillWeight",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "calculateWeight",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a72305820023dafe76e17f82f041c8fe961bc19762b433bdf2fd0fc87a35918d584c92a340029",
-  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820023dafe76e17f82f041c8fe961bc19762b433bdf2fd0fc87a35918d584c92a340029",
-  "sourceMap": "66:233:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:233:2;;;;;;;",
-  "deployedSourceMap": "66:233:2:-;;;;;",
-  "source": "pragma solidity ^0.4.23;\n\n// Standard FNs Required for new Skills\ninterface SkillInterface {\n  //////////////////////////////////////////\n  /// Events\n  //////////////////////////////////////////\n  event SkillAdded(bytes32 indexed _name);\n  event SkillEndorsed(bytes32 indexed _name, uint _total);\n}\n",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.23;\n\n/// Standard FNs Required for new Skills\ninterface SkillInterface {\n  //////////////////////////////////////////\n  /// Events\n  //////////////////////////////////////////\n  event SkillMinted(bytes32 indexed _name, address indexed _skill);\n  event SkillEndorsed(bytes32 indexed _name, address indexed _skill, uint _total);\n\n  //////////////////////////////////////////\n  /// Modifiers\n  //////////////////////////////////////////\n\n  //////////////////////////////////////////\n  /// Functions\n  //////////////////////////////////////////\n  function endorse(address _from) external;\n  function getSkillWeight() external;\n  function calculateWeight() external;\n}\n",
   "sourcePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
   "ast": {
     "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
     "exportedSymbols": {
       "SkillInterface": [
-        71
+        211
       ]
     },
-    "id": 72,
+    "id": 212,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 60,
+        "id": 185,
         "literals": [
           "solidity",
           "^",
@@ -62,11 +104,11 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": null,
-        "fullyImplemented": true,
-        "id": 71,
+        "documentation": "Standard FNs Required for new Skills",
+        "fullyImplemented": false,
+        "id": 211,
         "linearizedBaseContracts": [
-          71
+          211
         ],
         "name": "SkillInterface",
         "nodeType": "ContractDefinition",
@@ -74,21 +116,21 @@
           {
             "anonymous": false,
             "documentation": "///////////////////////////////////////\n Events\n///////////////////////////////////////",
-            "id": 64,
-            "name": "SkillAdded",
+            "id": 191,
+            "name": "SkillMinted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 63,
+              "id": 190,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62,
+                  "id": 187,
                   "indexed": true,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 64,
-                  "src": "215:21:2",
+                  "scope": 191,
+                  "src": "217:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -96,52 +138,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 61,
+                    "id": 186,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "215:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "214:23:2"
-            },
-            "src": "198:40:2"
-          },
-          {
-            "anonymous": false,
-            "documentation": null,
-            "id": 70,
-            "name": "SkillEndorsed",
-            "nodeType": "EventDefinition",
-            "parameters": {
-              "id": 69,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 66,
-                  "indexed": true,
-                  "name": "_name",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 70,
-                  "src": "261:21:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 65,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "261:7:2",
+                    "src": "217:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -152,12 +152,108 @@
                 },
                 {
                   "constant": false,
-                  "id": 68,
+                  "id": 189,
+                  "indexed": true,
+                  "name": "_skill",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 191,
+                  "src": "240:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "240:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:47:2"
+            },
+            "src": "199:65:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 199,
+            "name": "SkillEndorsed",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 198,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 193,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "287:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 192,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "287:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 195,
+                  "indexed": true,
+                  "name": "_skill",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "310:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 197,
                   "indexed": false,
                   "name": "_total",
                   "nodeType": "VariableDeclaration",
-                  "scope": 70,
-                  "src": "284:11:2",
+                  "scope": 199,
+                  "src": "334:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -165,10 +261,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 67,
+                    "id": 196,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "284:4:2",
+                    "src": "334:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -178,29 +274,143 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "260:36:2"
+              "src": "286:60:2"
             },
-            "src": "241:56:2"
+            "src": "267:80:2"
+          },
+          {
+            "body": null,
+            "documentation": "///////////////////////////////////////\n Modifiers\n///////////////////////////////////////\n///////////////////////////////////////\n Functions\n///////////////////////////////////////",
+            "id": 204,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endorse",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 202,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 201,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 204,
+                  "src": "581:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 200,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:15:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "604:0:2"
+            },
+            "scope": 211,
+            "src": "564:41:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 207,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getSkillWeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 205,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "631:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 206,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "642:0:2"
+            },
+            "scope": 211,
+            "src": "608:35:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 210,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "calculateWeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "670:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "681:0:2"
+            },
+            "scope": 211,
+            "src": "646:36:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
           }
         ],
-        "scope": 72,
-        "src": "66:233:2"
+        "scope": 212,
+        "src": "67:617:2"
       }
     ],
-    "src": "0:300:2"
+    "src": "0:685:2"
   },
   "legacyAST": {
     "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
     "exportedSymbols": {
       "SkillInterface": [
-        71
+        211
       ]
     },
-    "id": 72,
+    "id": 212,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 60,
+        "id": 185,
         "literals": [
           "solidity",
           "^",
@@ -214,11 +424,11 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": null,
-        "fullyImplemented": true,
-        "id": 71,
+        "documentation": "Standard FNs Required for new Skills",
+        "fullyImplemented": false,
+        "id": 211,
         "linearizedBaseContracts": [
-          71
+          211
         ],
         "name": "SkillInterface",
         "nodeType": "ContractDefinition",
@@ -226,21 +436,21 @@
           {
             "anonymous": false,
             "documentation": "///////////////////////////////////////\n Events\n///////////////////////////////////////",
-            "id": 64,
-            "name": "SkillAdded",
+            "id": 191,
+            "name": "SkillMinted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 63,
+              "id": 190,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62,
+                  "id": 187,
                   "indexed": true,
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
-                  "scope": 64,
-                  "src": "215:21:2",
+                  "scope": 191,
+                  "src": "217:21:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -248,52 +458,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 61,
+                    "id": 186,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "215:7:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "214:23:2"
-            },
-            "src": "198:40:2"
-          },
-          {
-            "anonymous": false,
-            "documentation": null,
-            "id": 70,
-            "name": "SkillEndorsed",
-            "nodeType": "EventDefinition",
-            "parameters": {
-              "id": 69,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 66,
-                  "indexed": true,
-                  "name": "_name",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 70,
-                  "src": "261:21:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 65,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "261:7:2",
+                    "src": "217:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -304,12 +472,108 @@
                 },
                 {
                   "constant": false,
-                  "id": 68,
+                  "id": 189,
+                  "indexed": true,
+                  "name": "_skill",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 191,
+                  "src": "240:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "240:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:47:2"
+            },
+            "src": "199:65:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 199,
+            "name": "SkillEndorsed",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 198,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 193,
+                  "indexed": true,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "287:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 192,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "287:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 195,
+                  "indexed": true,
+                  "name": "_skill",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 199,
+                  "src": "310:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 197,
                   "indexed": false,
                   "name": "_total",
                   "nodeType": "VariableDeclaration",
-                  "scope": 70,
-                  "src": "284:11:2",
+                  "scope": 199,
+                  "src": "334:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -317,10 +581,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 67,
+                    "id": 196,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "284:4:2",
+                    "src": "334:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -330,16 +594,130 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "260:36:2"
+              "src": "286:60:2"
             },
-            "src": "241:56:2"
+            "src": "267:80:2"
+          },
+          {
+            "body": null,
+            "documentation": "///////////////////////////////////////\n Modifiers\n///////////////////////////////////////\n///////////////////////////////////////\n Functions\n///////////////////////////////////////",
+            "id": 204,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endorse",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 202,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 201,
+                  "name": "_from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 204,
+                  "src": "581:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 200,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:15:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "604:0:2"
+            },
+            "scope": 211,
+            "src": "564:41:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 207,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getSkillWeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 205,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "631:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 206,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "642:0:2"
+            },
+            "scope": 211,
+            "src": "608:35:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 210,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "calculateWeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "670:2:2"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "681:0:2"
+            },
+            "scope": 211,
+            "src": "646:36:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
           }
         ],
-        "scope": 72,
-        "src": "66:233:2"
+        "scope": 212,
+        "src": "67:617:2"
       }
     ],
-    "src": "0:300:2"
+    "src": "0:685:2"
   },
   "compiler": {
     "name": "solc",
@@ -347,5 +725,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-07-07T23:34:35.809Z"
+  "updatedAt": "2018-07-08T03:39:54.403Z"
 }

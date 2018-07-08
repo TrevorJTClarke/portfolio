@@ -172,6 +172,15 @@
       "type": "function"
     },
     {
+      "constant": false,
+      "inputs": [],
+      "name": "calculateWeight",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "constant": true,
       "inputs": [],
       "name": "createTime",
@@ -202,6 +211,20 @@
       ],
       "payable": false,
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        }
+      ],
+      "name": "endorse",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -352,15 +375,35 @@
       "type": "function"
     },
     {
+      "constant": false,
+      "inputs": [],
+      "name": "getSkillWeight",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "anonymous": false,
       "inputs": [
         {
           "indexed": true,
           "name": "_name",
           "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "_skill",
+          "type": "address"
         }
       ],
-      "name": "SkillAdded",
+      "name": "SkillMinted",
       "type": "event"
     },
     {
@@ -370,6 +413,11 @@
           "indexed": true,
           "name": "_name",
           "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "_skill",
+          "type": "address"
         },
         {
           "indexed": false,
@@ -451,20 +499,20 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.23;\n\n// TODO: Import ERC721 & Interface\n// TODO: Create Library for genome fns\nimport \"zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol\";\nimport \"./SkillInterface.sol\";\n\ncontract Skill is ERC721Token, SkillInterface {\n  /* address public owner; */\n  uint256 public genome;\n  // The timestamp from the block when this skill came into existence.\n  uint64 public createTime;\n  // The timestamp from the block when this skill was first endorsed.\n  uint64 public endorsedTime;\n\n}\n",
+  "source": "pragma solidity ^0.4.23;\n\n// TODO: Import ERC721 & Interface\n// TODO: Create Library for genome fns\nimport \"zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol\";\nimport \"./SkillInterface.sol\";\n\ncontract Skill is ERC721Token, SkillInterface {\n  /* address public owner; */\n  uint256 public genome;\n  // The timestamp from the block when this skill came into existence.\n  uint64 public createTime;\n  // The timestamp from the block when this skill was first endorsed.\n  uint64 public endorsedTime;\n\n  // TODO: finish\n  /// @dev constructor\n  constructor() public {\n\n  }\n\n\n}\n",
   "sourcePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
   "ast": {
     "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
     "exportedSymbols": {
       "Skill": [
-        58
+        183
       ]
     },
-    "id": 59,
+    "id": 184,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 45,
+        "id": 166,
         "literals": [
           "solidity",
           "^",
@@ -477,10 +525,10 @@
       {
         "absolutePath": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
         "file": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
-        "id": 46,
+        "id": 167,
         "nodeType": "ImportDirective",
-        "scope": 59,
-        "sourceUnit": 1317,
+        "scope": 184,
+        "sourceUnit": 1457,
         "src": "100:66:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -488,10 +536,10 @@
       {
         "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
         "file": "./SkillInterface.sol",
-        "id": 47,
+        "id": 168,
         "nodeType": "ImportDirective",
-        "scope": 59,
-        "sourceUnit": 72,
+        "scope": 184,
+        "sourceUnit": 212,
         "src": "167:30:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -502,17 +550,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 48,
+              "id": 169,
               "name": "ERC721Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1316,
+              "referencedDeclaration": 1456,
               "src": "217:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721Token_$1316",
+                "typeIdentifier": "t_contract$_ERC721Token_$1456",
                 "typeString": "contract ERC721Token"
               }
             },
-            "id": 49,
+            "id": 170,
             "nodeType": "InheritanceSpecifier",
             "src": "217:11:1"
           },
@@ -520,53 +568,53 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 50,
+              "id": 171,
               "name": "SkillInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 71,
+              "referencedDeclaration": 211,
               "src": "230:14:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SkillInterface_$71",
+                "typeIdentifier": "t_contract$_SkillInterface_$211",
                 "typeString": "contract SkillInterface"
               }
             },
-            "id": 51,
+            "id": 172,
             "nodeType": "InheritanceSpecifier",
             "src": "230:14:1"
           }
         ],
         "contractDependencies": [
-          71,
           211,
-          231,
-          238,
-          345,
-          929,
-          1316
+          351,
+          371,
+          378,
+          485,
+          1069,
+          1456
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 58,
+        "id": 183,
         "linearizedBaseContracts": [
-          58,
-          71,
-          1316,
-          929,
-          238,
-          231,
+          183,
           211,
-          345
+          1456,
+          1069,
+          378,
+          371,
+          351,
+          485
         ],
         "name": "Skill",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 53,
+            "id": 174,
             "name": "genome",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "279:21:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -575,7 +623,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 52,
+              "id": 173,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "279:7:1",
@@ -589,10 +637,10 @@
           },
           {
             "constant": false,
-            "id": 55,
+            "id": 176,
             "name": "createTime",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "375:24:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -601,7 +649,7 @@
               "typeString": "uint64"
             },
             "typeName": {
-              "id": 54,
+              "id": 175,
               "name": "uint64",
               "nodeType": "ElementaryTypeName",
               "src": "375:6:1",
@@ -615,10 +663,10 @@
           },
           {
             "constant": false,
-            "id": 57,
+            "id": 178,
             "name": "endorsedTime",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "473:26:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -627,7 +675,7 @@
               "typeString": "uint64"
             },
             "typeName": {
-              "id": 56,
+              "id": 177,
               "name": "uint64",
               "nodeType": "ElementaryTypeName",
               "src": "473:6:1",
@@ -638,26 +686,60 @@
             },
             "value": null,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 181,
+              "nodeType": "Block",
+              "src": "566:6:1",
+              "statements": []
+            },
+            "documentation": "@dev constructor",
+            "id": 182,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "556:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "566:0:1"
+            },
+            "scope": 183,
+            "src": "545:27:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 59,
-        "src": "199:304:1"
+        "scope": 184,
+        "src": "199:377:1"
       }
     ],
-    "src": "0:504:1"
+    "src": "0:577:1"
   },
   "legacyAST": {
     "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/Skill.sol",
     "exportedSymbols": {
       "Skill": [
-        58
+        183
       ]
     },
-    "id": 59,
+    "id": 184,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 45,
+        "id": 166,
         "literals": [
           "solidity",
           "^",
@@ -670,10 +752,10 @@
       {
         "absolutePath": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
         "file": "zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol",
-        "id": 46,
+        "id": 167,
         "nodeType": "ImportDirective",
-        "scope": 59,
-        "sourceUnit": 1317,
+        "scope": 184,
+        "sourceUnit": 1457,
         "src": "100:66:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -681,10 +763,10 @@
       {
         "absolutePath": "/Users/trevorclarke/Github/portfolio/contracts/SkillInterface.sol",
         "file": "./SkillInterface.sol",
-        "id": 47,
+        "id": 168,
         "nodeType": "ImportDirective",
-        "scope": 59,
-        "sourceUnit": 72,
+        "scope": 184,
+        "sourceUnit": 212,
         "src": "167:30:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -695,17 +777,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 48,
+              "id": 169,
               "name": "ERC721Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1316,
+              "referencedDeclaration": 1456,
               "src": "217:11:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC721Token_$1316",
+                "typeIdentifier": "t_contract$_ERC721Token_$1456",
                 "typeString": "contract ERC721Token"
               }
             },
-            "id": 49,
+            "id": 170,
             "nodeType": "InheritanceSpecifier",
             "src": "217:11:1"
           },
@@ -713,53 +795,53 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 50,
+              "id": 171,
               "name": "SkillInterface",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 71,
+              "referencedDeclaration": 211,
               "src": "230:14:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SkillInterface_$71",
+                "typeIdentifier": "t_contract$_SkillInterface_$211",
                 "typeString": "contract SkillInterface"
               }
             },
-            "id": 51,
+            "id": 172,
             "nodeType": "InheritanceSpecifier",
             "src": "230:14:1"
           }
         ],
         "contractDependencies": [
-          71,
           211,
-          231,
-          238,
-          345,
-          929,
-          1316
+          351,
+          371,
+          378,
+          485,
+          1069,
+          1456
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 58,
+        "id": 183,
         "linearizedBaseContracts": [
-          58,
-          71,
-          1316,
-          929,
-          238,
-          231,
+          183,
           211,
-          345
+          1456,
+          1069,
+          378,
+          371,
+          351,
+          485
         ],
         "name": "Skill",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 53,
+            "id": 174,
             "name": "genome",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "279:21:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -768,7 +850,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 52,
+              "id": 173,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "279:7:1",
@@ -782,10 +864,10 @@
           },
           {
             "constant": false,
-            "id": 55,
+            "id": 176,
             "name": "createTime",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "375:24:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -794,7 +876,7 @@
               "typeString": "uint64"
             },
             "typeName": {
-              "id": 54,
+              "id": 175,
               "name": "uint64",
               "nodeType": "ElementaryTypeName",
               "src": "375:6:1",
@@ -808,10 +890,10 @@
           },
           {
             "constant": false,
-            "id": 57,
+            "id": 178,
             "name": "endorsedTime",
             "nodeType": "VariableDeclaration",
-            "scope": 58,
+            "scope": 183,
             "src": "473:26:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -820,7 +902,7 @@
               "typeString": "uint64"
             },
             "typeName": {
-              "id": 56,
+              "id": 177,
               "name": "uint64",
               "nodeType": "ElementaryTypeName",
               "src": "473:6:1",
@@ -831,13 +913,47 @@
             },
             "value": null,
             "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 181,
+              "nodeType": "Block",
+              "src": "566:6:1",
+              "statements": []
+            },
+            "documentation": "@dev constructor",
+            "id": 182,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "556:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "566:0:1"
+            },
+            "scope": 183,
+            "src": "545:27:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 59,
-        "src": "199:304:1"
+        "scope": 184,
+        "src": "199:377:1"
       }
     ],
-    "src": "0:504:1"
+    "src": "0:577:1"
   },
   "compiler": {
     "name": "solc",
@@ -845,5 +961,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-07-07T23:34:35.809Z"
+  "updatedAt": "2018-07-08T03:39:54.403Z"
 }

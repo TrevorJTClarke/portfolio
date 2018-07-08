@@ -13,4 +13,11 @@ contract Skill is ERC721Token, SkillInterface {
   // The timestamp from the block when this skill was first endorsed.
   uint64 public endorsedTime;
 
+  // TODO: finish
+  /// @dev constructor
+  constructor() public {
+
+  }
+
+
 }
