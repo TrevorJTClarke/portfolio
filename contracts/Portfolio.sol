@@ -76,6 +76,7 @@ contract Portfolio {
   function removeMeta (address _reference)
     onlyOwner public {
       delete metadata[_reference];
+      emit MetaRemoved(_reference);
     }
 
   /// @dev Adds/updates metadata reference to contract data
